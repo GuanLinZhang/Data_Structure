@@ -26,10 +26,10 @@ public class ArithmeticalExpr {
             else if (buffer.equals(")")) {
                 String operator = stackOperator.pop();
                 double result = stackNum.pop();
-                if      (operator.equals("+")) result = stackNum.pop() + result;
-                else if (operator.equals("-")) result = stackNum.pop() - result;
-                else if (operator.equals("*")) result = stackNum.pop() * result;
-                else if (operator.equals("/")) result = stackNum.pop() / result;
+                if      (operator.equals("+")) result += stackNum.pop();
+                else if (operator.equals("-")) result -= stackNum.pop();
+                else if (operator.equals("*")) result *= stackNum.pop();
+                else if (operator.equals("/")) result /= stackNum.pop();
                 else if (operator.equals("sqrt")) result = Math.sqrt(result);
                 stackNum.push(result);
             }

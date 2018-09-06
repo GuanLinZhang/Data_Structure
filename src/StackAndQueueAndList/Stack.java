@@ -53,18 +53,6 @@ public class Stack<E> implements Iterable<E> {
     }
 
     @Override
-    public String toString() {
-        var stringBuilder = new StringBuilder();
-
-        for (E elem : this) {
-            stringBuilder.append(elem);
-            stringBuilder.append(" ");
-        }
-
-        return stringBuilder.toString();
-    }
-
-    @Override
     public Iterator<E> iterator() {
         return new ListIterator();
     }
