@@ -44,11 +44,6 @@ public class Stack<E> implements Iterable<E> {
         }
     }
 
-    public void traversal() {
-        for (E elem : this) {
-            System.out.println(elem);
-        }
-    }
 
     public E peek() {
         if (isEmpty()) {
@@ -57,7 +52,17 @@ public class Stack<E> implements Iterable<E> {
         return first.elem;
     }
 
+    @Override
+    public String toString() {
+        var stringBuilder = new StringBuilder();
 
+        for (E elem : this) {
+            stringBuilder.append(elem);
+            stringBuilder.append(" ");
+        }
+
+        return stringBuilder.toString();
+    }
 
     @Override
     public Iterator<E> iterator() {
