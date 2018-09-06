@@ -1,13 +1,16 @@
+package StackAndQueueAndList;
+
 import java.util.EmptyStackException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+
 
 public class ArrayStackOfStrings implements Iterable<String> {
     private String[] items;
     private int n;
 
     public ArrayStackOfStrings(int capacity) {
-        item = new String[capacity];
+        items = new String[capacity];
         n = 0;
     }
 
@@ -16,7 +19,7 @@ public class ArrayStackOfStrings implements Iterable<String> {
     }
 
     public boolean isFull() {
-        return n == item.length;
+        return n == items.length;
     }
 
     public void push(String item) {
@@ -37,10 +40,10 @@ public class ArrayStackOfStrings implements Iterable<String> {
 
     @Override
     public Iterator<String> iterator() {
-        return new ReverseArrayIterator<>();
+        return new ReverseArrayIterator();
     }
 
-    private class ReverseArrayIterator<String> implements Iterator<String> {
+    private class ReverseArrayIterator implements Iterator<String> {
         private int i = n - 1;
 
         @Override
