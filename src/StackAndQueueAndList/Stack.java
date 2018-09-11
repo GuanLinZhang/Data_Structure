@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class Stack<E> implements Iterable<E> {
-    private int n;
+    private int N;
     private Node first;
 
     private class Node {
@@ -14,7 +14,7 @@ public class Stack<E> implements Iterable<E> {
 
     public Stack() {
         first = null;
-        n = 0;
+        N = 0;
     }
 
     public boolean isEmpty() {
@@ -22,7 +22,7 @@ public class Stack<E> implements Iterable<E> {
     }
 
     public int Size() {
-        return n;
+        return N;
     }
 
     public void push(E elem) {
@@ -30,7 +30,7 @@ public class Stack<E> implements Iterable<E> {
         first = new Node();
         first.elem = elem;
         first.next = oldNode;
-        n++;
+        N++;
     }
 
     public E pop() {
@@ -39,7 +39,7 @@ public class Stack<E> implements Iterable<E> {
         } else {
             E elem = first.elem;
             first = first.next;
-            n--;
+            N--;
             return elem;
         }
     }
